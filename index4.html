@@ -27,23 +27,27 @@
   <link rel="stylesheet" href="js/summernote/summernote-bs4.min.css">
   <style>
     @font-face {
-      font-family: calibri;
-      src: url(./fonts/calibrib.ttf) format("truetype");
+      font-family: "CalibriBold";
+      src: url("fonts/calibrib.ttf") format("truetype");
     }
     @font-face {
-      font-family: calibrieaguler;
-      src: url(./fonts/Calibri.ttf) format("truetype");
+      font-family: "CalibriRegular";
+      src: url("fonts/Calibri.ttf") format("truetype");
     }
-    .calibri{
-      font-family: 'calibri', Arial, sans-serif;
+    .CalibriBold{
+      font-family: 'CalibriBold', Arial, sans-serif;
     }
     .abhi{
       height: 42px;
     }
+    .active{
+      
+      border-bottom: 4px solid #FFB900;
+    }
     .abhi a{
       line-height: 42px;
       padding: 7px 30px;
-      font-family: 'calibrieaguler', Arial, sans-serif;
+      font-family: 'CalibriRegular', Arial, sans-serif;
     }
     .a_purple{
       background-color: #442460 !important;
@@ -82,19 +86,17 @@
       transition: all 0.1s linear;
       font-size: 1em;
     }
-    .active{
-      border-bottom: 4px solid #FFB900;
-    }
     .a_col{
        color: #000 !important;
     }
     .table{
-      height: 161px;
+      
       background-color: #fff;
       border: none !important;
     }
     
     
+
     @media only screen and (max-width: 990px) {
       .a_tabpanel > div{  
         width: 1200px;
@@ -116,72 +118,43 @@
   </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-    
-    
   <!-- Modal -->
-  <div class="abhi">
-    <div class="modal " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg pt-5">
-          <div class="modal-content mt-5">
-            <div class="modal-header border-bottom-0">
-              <h5 class="modal-title" id="exampleModalLabel">Let's create a project for you!</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg pt-5">
+    <div class="modal-content mt-5">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title" id="exampleModalLabel">Let's create a project for you!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>We need a little information to create your first project. This should take just a couple of minutes.</p>
+        <form>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group" style="position: relative;">
+                <input placeholder="" type="email " class="form-control border-0 rounded-0 a_border-bottom " id="exampleInputEmail1" aria-describedby="emailHelp">
+                <span class="a_xyz">Enter project name</span>
+              </div>
             </div>
-            <div class="modal-body">
-              <p>We need a little information to create your first project. This should take just a couple of minutes.</p>
-              <span style="font-size: 14px;">All fields are required*</span>
-              <form>
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group" style="position: relative;">
-                      <input placeholder="" type="email " class="form-control border-0 rounded-0 a_border-bottom " id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <span class="a_xyz">Enter project name</span>
-                    </div>
-                  </div>
-                  <div class="col-6">
-                      <div class="form-group" style="position: relative;">
-                          <input placeholder="" type="email " class="form-control border-0 rounded-0 a_border-bottom " id="exampleInputEmail1" aria-describedby="emailHelp">
-                          <span class="a_xyz">Enter research market </span>
-                        </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group" style="position: relative;">
-                      <input placeholder="" type="email " class="form-control border-0 rounded-0 a_border-bottom " id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <span class="a_xyz">Enter sample size</span>
-                    </div>
-                  </div>
-                  <div class="col-6">
-                      <div class="form-group dropdown" style="position: relative;">
-                          <input type="text"class="form-control border-0 rounded-0 a_border-bottom ">
-                              <button class="btn text-left dropdown-toggle form-control border-0 rounded-0 a_border-bottom a_xyz" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Survey type
-                              </button>
-                              <div class="dropdown-menu text-left" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                              </div>
-                            </div>
-                        
-                  </div>
-                </div>
-                
-              </form>
-            </div>
-            <div class="modal-footer border-top-0">
-              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Reset</button>
-              <button type="submit" class="btn btn-primary">Create</button>
+            <div class="col-6">
+              <div class="form-group">
+                <input placeholder="Enter research market" type="email " class="form-control border-0 rounded-0 a_border-bottom" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
             </div>
           </div>
-        </div>
+          
+        </form>
       </div>
-      <div class="wrapper">
+      <div class="modal-footer border-top-0">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Reset</button>
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </div>
   </div>
-
+</div>
+<div class="wrapper">
 
   <!-- Preloader -->
  <!--  <div class="preloader flex-column justify-content-center align-items-center">
@@ -352,7 +325,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Client dashboard
+                Dashboard
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -535,85 +508,84 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content ">
       <div class="container-fluid">
         <div class="row">
           <div class="col-6">
-            <h3 class="fw-bold a_purple_txt calibri">User Experience Mapping - Project ABC</h3>
+            <h3 class="fw-bold a_purple_txt CalibriBold">User Experience Mapping - Project ABX</h3>
           </div>
- 
         </div>
         <div class="row ">
-          <div class="col-12 ">
+          <div class="col-12">
             <div class="a_tabpanel">
               <div class="a_tabpanel_child">
-            <ul class="nav nav-tabs abhi bg-white ">
-              <li ><a class=" a_col"data-toggle="tab" href="#Projects">Projects</a></li>
-              <li><a class="active a_col" data-toggle="tab" href="#Projects-details">Projects details</a></li>
-              <li><a class=" a_col" data-toggle="tab" href="#Setup">Setup</a></li>
-              <li><a class=" a_col"data-toggle="tab" href="#Share">Share</a></li>
-              <li ><a class=" a_col" data-toggle="tab" href="#Fieldwork status">Fieldwork status</a></li>
-              <li><a class=" a_col" data-toggle="tab" href="#Process">Process</a></li>
-              <li><a  class=" a_col"data-toggle="tab" href="#Report">Report</a></li>
-            </ul>
-            
-            <div class="tab-content">
-              <div id="Projects" class="tab-pane fade in active">
-                <h3>HOME</h3>
-                <p>Some content.</p>
+                <ul class="nav nav-tabs abhi bg-white ">
+                  <li ><a class="a_col" data-toggle="tab" href="#project">Projects</a></li>
+                  <li><a class="active a_col" data-toggle="tab" href="#project_detail">Projects Details</a></li>
+                  <li><a class="a_col"data-toggle="tab" href="#setups">Setups</a></li>
+                  <li><a class="a_col"data-toggle="tab" href="#share">Share</a></li>
+                  <li><a class="a_col"data-toggle="tab" href="#fieldwork_status">Fieldwork status</a></li>
+                  <li><a class="a_col"data-toggle="tab" href="#proccess">Proccess</a></li>
+                  <li><a class="a_col"data-toggle="tab" href="#report">Report</a></li>
+                </ul>
+                
+                <div class="tab-content ">
+                  <div id="project" class="tab-pane fade in active">
+                    <h3>Menu 2</h3>
+                    <p>Some content in menu 2.</p>
+                  </div>
+                  <div id="project_detail" class="tab-pane fade">
+                    <table class="table m-0">
+                        <thead class="">
+                          <tr>
+                            <th scope="col">Project name</th>
+                            <th scope="col">Project ID</th>
+                            <th scope="col">Research market</th>
+                            <th scope="col">Sample size</th>
+                            <th scope="col">Survey type</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Vinod 4</th>
+                            <td>61404b2ab963504563cdfbs4</td>
+                            <td>India</td>
+                            <td>10</td>
+                            <td>false</td>
+                          </tr>
+                    </table>
+                  </div>
+                  <div id="setups" class="tab-pane fade">
+                    <h3>setups 2</h3>
+                    <p>Some content in menu 2.</p>
+                  </div>
+                  <div id="share" class="tab-pane fade">
+                    <h3>share 2</h3>
+                    <p>Some content in menu 2.</p>
+                  </div>
+                  <div id="fieldwork_status" class="tab-pane fade">
+                    <h3>Menu 2</h3>
+                    <p>Some content in menu 2.</p>
+                  </div>
+                  <div id="proccess" class="tab-pane fade">
+                    <h3>Menu 2</h3>
+                    <p>Some content in menu 2.</p>
+                  </div>
+                  <div id="report" class="tab-pane fade">
+                    <h3>Menu 2</h3>
+                    <p>Some content in menu 2.</p>
+                  </div>
+                </div>
               </div>
-              <div id="Projects-details" class="tab-pane fade active">
-                <table class="table m-0">
-                  <thead class="">
-                    <tr>
-                      <th scope="col">Project name</th>
-                      <th scope="col">Project ID</th>
-                      <th scope="col">Research market</th>
-                      <th scope="col">Sample size</th>
-                      <th scope="col">Survey type</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">Vinod 4</th>
-                      <td>61404b2ab963504563cdfbs4</td>
-                      <td>India</td>
-                      <td>10</td>
-                      <td>false</td>
-                    </tr>
-                    
-                  </tbody>
-                </table>
-              </div>
-              <div id="Setup" class="tab-pane fade">
-                <h3>Menu 2</h3>
-                <p>Some content in menu 2.</p>
-              </div>
-              <div id="Share" class="tab-pane fade">
-                <h3>Menu 2</h3>
-                <p>Some content in menu 2.</p>
-              </div>
-              <div id="Fieldwork status" class="tab-pane fade">
-                <h3>Menu 2</h3>
-                <p>Some content in menu 2.</p>
-              </div>
-              <div id="Process" class="tab-pane fade">
-                <h3>Menu 2</h3>
-                <p>Some content in menu 2.</p>
-              </div>
-              <div id="Report" class="tab-pane fade">
-                <h3>Menu 2</h3>
-                <p>Some content in menu 2.</p>
-              </div>
+              
             </div>
+            
           </div>
-        </div>
-          </div>
-        </div>
-        <div>
-          <button class="btn float-right a_purple text-white"  data-toggle="modal" data-target="#exampleModal">Create new project</button>
         </div>
         
+        <div>
+          <button class="btn float-right a_purple text-white"  >Confirm project</button>
+        </div>
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
